@@ -7,8 +7,13 @@
   width: 20%;
   margin: auto;
   display: inline-block;
+  /* transform: translateX(150px); */
+  transition: 1s;
+  /* opacity:0.5; */
 }
-
+.transform-demo > div:hover {
+  transform: translateX(150px);
+}
 /****************************************
 * Transition
 ****************************************/
@@ -18,11 +23,13 @@
   width: 200px;
   height: 200px;
   filter: grayscale(100%);
+  transition:1s;
 
 }
 
 .transition-demo img:hover {
-
+filter:none;
+transform:rotate(360deg) scale(2.0)
 }
 
 /****************************************
@@ -35,11 +42,37 @@
   width: 500px;
   margin: auto;
   background-color: palegreen;
+  /* animation-name:sale=bar;
+  animation-duration:2s; */
+  animation: sale-bar 5s;
 
 }
 
 @keyframes sale-bar {
   0% { background-color: lightgreen; width: 450px }
+  25%{background-color: purple; width:350px}
+  50%{background-color: yellow; width:225px}
   75% { background-color: #FF033E; width: 125x }
   100% { background-color: crimson; width: 10px }
+}
+
+section{
+  background-color: red;
+  height: 400px;
+  width: 400px;
+}
+
+.inner-div{
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  animation:ed-moves 3s linear infinite alternate-reverse;
+}
+
+@keyframes ed-moves{
+0%{transform: translateX(0) translateY(0); background-color: purple;}
+25%{transform: translateX(0) translateY(100%); background-color: yellow;}
+50%{transform: translateX(100%) translateY(100%); background-color: green;}
+75%{transform: translate(100%, 0); background-color: orange}
+/* 100%{transform: translate(100%, 0); background-color: purple;} */
 }
